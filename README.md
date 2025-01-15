@@ -5,9 +5,9 @@
 
 ## Introduction
 
-A simple API built with Node.js, Typescript, Express, Drizzle, and Postgres.
+A simple API built with Node.js, TypeScript, Express, Drizzle, and Postgres.
 
-## Installtion
+## Installation
 
 To run the API locally, you need to have the following installed:
 
