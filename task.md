@@ -71,7 +71,3 @@ VALUES
 ('Business 5', 41.8781, -87.6298, 'Cafe'),
 ('Business 6', 51.5074, -0.1278, 'Restaurant');
 ```
-
-# TODO
-
-- Add option to select the distance unit (km or miles)

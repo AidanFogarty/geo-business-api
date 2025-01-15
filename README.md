@@ -55,7 +55,13 @@ geo-business-api > npm run dev
 [nodemon] starting `ts-node -r tsconfig-paths/register src/index.ts`
 ```
 
-4. Run the tests
+4. Setup the database & seed it with some data.
+
+```bash
+npx drizzle-kit push && npm run seed
+```
+
+5. Run the tests
 
 ```bash
 npm run test
