@@ -55,6 +55,12 @@ geo-business-api > npm run dev
 [nodemon] starting `ts-node -r tsconfig-paths/register src/index.ts`
 ```
 
+4. Run the tests
+
+```bash
+npm run test
+```
+
 ## Usage
 
 ### 1. Get all businesses near a point sorted by distance
