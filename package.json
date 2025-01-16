@@ -5,10 +5,10 @@
   "scripts": {
     "build": "npx tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
     "start": "node dist/index.js",
-    "dev": "nodemon -r tsconfig-paths/register src/index.ts",
+    "dev": "nodemon -r tsconfig-paths/register src/server.ts",
     "test": "node --import tsx --test tests/**/*.test.ts",
     "lint": "eslint 'src/**/*.ts' 'tests/**/*.ts'",
-    "seed": "npx tsx src/db/seed.ts"
+    "seed": "npx drizzle-kit push && npx tsx src/db/seed.ts"
   },
   "author": "Aidan Fogarty",
   "license": "ISC",
@@ -25,10 +25,12 @@
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.5",
     "@types/pg": "^8.11.10",
+    "@types/supertest": "^6.0.2",
     "drizzle-kit": "^0.30.1",
     "eslint": "^9.18.0",
     "globals": "^15.14.0",
     "nodemon": "^3.1.9",
+    "supertest": "^7.0.0",
     "ts-node": "^10.9.2",
     "tsc-alias": "^1.8.10",
     "tsx": "^4.19.2",

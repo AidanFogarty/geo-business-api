@@ -9,13 +9,15 @@ dotenv.config();
 
 const DEFAULT_LIMIT = 10;
 
-const app: Express = express();
-const port = process.env.PORT || 3000;
+export const app: Express = express();
 
 app.use(express.json());
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
+app.get("/healthcheck", (req: Request, res: Response) => {
+  res.status(200).json({
+    status: "ok",
+  });
+  return;
 });
 
 app.get("/discovery", async (req: Request, res: Response) => {
@@ -63,8 +65,4 @@ app.get("/discovery", async (req: Request, res: Response) => {
 
   res.json(sortedBusinesses);
   return;
-});
-
-app.listen(port, () => {
-  console.log(`[server]: Server is running at http://localhost:${port}`);
 });
