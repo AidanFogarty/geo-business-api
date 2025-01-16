@@ -58,14 +58,71 @@ geo-business-api > npm run dev
 4. Setup the database & seed it with some data.
 
 ```bash
-npx drizzle-kit push && npm run seed
+npm run seed
 ```
+
+<details>
+  <summary>Example Output</summary>
+
+```bash
+> geo-business-api@1.0.0 seed
+> npx drizzle-kit push && npx tsx src/db/seed.ts
+
+No config path provided, using default 'drizzle.config.ts'
+Reading config file '/Users/aidan/projects/interviews/geo-business-api/drizzle.config.ts'
+Using 'pg' driver for database querying
+[✓] Pulling schema from database...
+[i] No changes detected
+```
+
+</details>
 
 5. Run the tests
 
 ```bash
 npm run test
 ```
+
+<details>
+  <summary>Example Output</summary>
+
+```bash
+> geo-business-api@1.0.0 test
+> node --import tsx --test tests/**/*.test.ts
+
+▶ GET /discovery
+  ▶ given no lat and long query params
+    ✔ should return 400 (7.003666ms)
+  ✔ given no lat and long query params (7.26ms)
+  ▶ given a valid lat and long query params
+    ✔ should return 200 (13.320333ms)
+    ✔ should return at least 5 businesses (2.573291ms)
+    ✔ should return businesses with distance_km (2.9565ms)
+    ✔ should return businesses sorted by distance (3.277708ms)
+    ✔ should adhere to the limit query param (2.755666ms)
+    ✔ should return error if limit is not a postive number (1.400167ms)
+    ✔ should adhere to the type query param (2.574667ms)
+  ✔ given a valid lat and long query params (29.441833ms)
+✔ GET /discovery (55.366542ms)
+▶ GET /healthcheck
+  ✔ should return 200 (17.224333ms)
+  ✔ should return status ok in json (2.237417ms)
+✔ GET /healthcheck (19.888458ms)
+▶ haversineDistance
+  ✔ should return the distance between two coordinates (0.365209ms)
+  ✔ should return 0 for the same coordinate (0.058667ms)
+✔ haversineDistance (0.874084ms)
+ℹ tests 12
+ℹ suites 5
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10443.7585
+```
+
+</details>
 
 ## Usage
 
